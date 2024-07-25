@@ -5,7 +5,7 @@ from const import *
 from game import Game
 from square import Square
 from move import Move
-from debug import debug
+from debug import debug, debugPiece
 
 class Main:
 
@@ -22,6 +22,7 @@ class Main:
         board = self.game.board
         dragger = self.game.dragger
         tmp_str = "hello"
+        tmp_piece = ""
         while True:
             # show methods
             game.show_bg(screen)
@@ -30,6 +31,7 @@ class Main:
             game.show_pieces(screen)
             game.show_hover(screen)
             debug(tmp_str)
+            debugPiece(tmp_piece)
             if dragger.dragging:
                 dragger.update_blit(screen)
 
@@ -47,6 +49,7 @@ class Main:
                     # if clicked square has a piece ?
                     if board.squares[clicked_row][clicked_col].has_piece():
                         piece = board.squares[clicked_row][clicked_col].piece
+                        print(piece)
                         # valid piece (color) ?
                         if piece.color == game.next_player:
                             board.calc_moves(piece, clicked_row, clicked_col, bool=True)
@@ -62,7 +65,8 @@ class Main:
                 elif event.type == pygame.MOUSEMOTION:
                     motion_row = event.pos[1] // SQSIZE
                     motion_col = event.pos[0] // SQSIZE
-
+                    tmp_piece = str(motion_row) + " " + str(motion_col)
+                    
                     game.set_hover(motion_row, motion_col)
 
                     if dragger.dragging:
