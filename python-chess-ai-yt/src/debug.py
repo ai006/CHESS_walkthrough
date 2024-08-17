@@ -14,3 +14,9 @@ def debugPiece(info, x = 30, y =30):
     debug_surf = font.render(str(info), True, 'green')
     debug_rect = debug_surf.get_rect(topleft = (x,y))
     display_surf.blit(debug_surf, debug_rect)
+
+def debugPieceCoord(info, x = 50, y =50):
+    display_surf = pygame.display.get_surface()
+    debug_surf = font.render(str(info), True, 'green')
+    debug_rect = debug_surf.get_rect(topleft = (x,y))
+    display_surf.blit(debug_surf, debug_rect)

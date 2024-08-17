@@ -5,7 +5,9 @@ from const import *
 from game import Game
 from square import Square
 from move import Move
-from debug import debug, debugPiece
+from debug import debug, debugPiece, debugPieceCoord
+from mouse_events import Mouse_Events
+import time
 
 class Main:
 
@@ -14,6 +16,11 @@ class Main:
         self.screen = pygame.display.set_mode( (WIDTH, HEIGHT) )
         pygame.display.set_caption('Chess')
         self.game = Game()
+        self.mouse_events = Mouse_Events()
+
+        #create a custom event that will be used to create other events
+        self.POST_EVENT_TIMER = pygame.USEREVENT + 1
+        self.POSITION_MOUSE = pygame.USEREVENT + 2
 
     def mainloop(self):
         
@@ -23,6 +30,8 @@ class Main:
         dragger = self.game.dragger
         tmp_str = "hello"
         tmp_piece = ""
+        tmp_xy = ""
+        pygame.time.set_timer(self.POST_EVENT_TIMER, 10)
         while True:
             # show methods
             game.show_bg(screen)
@@ -32,17 +41,22 @@ class Main:
             game.show_hover(screen)
             debug(tmp_str)
             debugPiece(tmp_piece)
+            debugPieceCoord(tmp_xy)
+
             if dragger.dragging:
                 dragger.update_blit(screen)
 
             for event in pygame.event.get():
-
                 # click
-                if event.type == pygame.MOUSEBUTTONDOWN:
+                # MOUSEBUTTONDOWN is only a single action meaning this if statement is only 
+                # entered on a click
+                if event.type == pygame.MOUSEBUTTONDOWN:                
                     dragger.update_mouse(event.pos)
-
+                    print(event)
                     clicked_row = dragger.mouseY // SQSIZE
                     clicked_col = dragger.mouseX // SQSIZE
+                    # clicked_row = start_x
+                    # clicked_col = start_y
                     tmp_str = str(clicked_row) + " " + str(clicked_col)
                     
 
@@ -63,9 +77,11 @@ class Main:
                 
                 # mouse motion
                 elif event.type == pygame.MOUSEMOTION:
+                    # print(event)
                     motion_row = event.pos[1] // SQSIZE
                     motion_col = event.pos[0] // SQSIZE
-                    tmp_piece = str(motion_row) + " " + str(motion_col)
+                    tmp_piece = str(event.pos[1]) + " " + str(event.pos[0])
+                    tmp_xy = str(motion_row) + " " + str(motion_col)
                     
                     game.set_hover(motion_row, motion_col)
 
@@ -81,12 +97,15 @@ class Main:
                 
                 # click release
                 elif event.type == pygame.MOUSEBUTTONUP:
-                    
-                    if dragger.dragging:
+                    print(event)
+                    # if dragger.dragging:
+                    if True:
                         dragger.update_mouse(event.pos)
 
                         released_row = dragger.mouseY // SQSIZE
                         released_col = dragger.mouseX // SQSIZE
+                        # released_row = dest_x
+                        # released_col = dest_y
 
                         # create possible move
                         initial = Square(dragger.initial_row, dragger.initial_col)
@@ -131,6 +150,20 @@ class Main:
                     pygame.quit()
                     sys.exit()
             
+                # create the chess move events
+                elif event.type == pygame.USEREVENT + 1:
+                    if(len(self.mouse_events.events) != 0):
+                        pygame.event.post(self.mouse_events.events[0])
+                        self.mouse_events.events.pop(0)
+                    else:
+                        pygame.time.set_timer(self.POST_EVENT_TIMER, 0)
+                
+                #Reposition mouse before move events
+                elif event.type == pygame.USEREVENT + 2:
+                    print(event)
+                    pygame.mouse.set_pos(event.pos)
+
+
             pygame.display.update()
 
 
