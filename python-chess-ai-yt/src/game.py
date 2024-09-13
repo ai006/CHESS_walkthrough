@@ -63,7 +63,8 @@ class Game:
                         img_center = col * SQSIZE + SQSIZE // 2, row * SQSIZE + SQSIZE // 2
                         piece.texture_rect = img.get_rect(center=img_center)
                         surface.blit(img, piece.texture_rect)
-
+    
+    # function used to show all the possible moves that a chess piece can make
     def show_moves(self, surface):
         theme = self.config.theme
 
@@ -73,11 +74,16 @@ class Game:
             # loop all valid moves
             for move in piece.moves:
                 # color
-                color = theme.moves.light if (move.final.row + move.final.col) % 2 == 0 else theme.moves.dark
+                # color = theme.moves.light if (move.final.row + move.final.col) % 2 == 0 else theme.moves.dark
+                color = "#cacbb3"
                 # rect
                 rect = (move.final.col * SQSIZE, move.final.row * SQSIZE, SQSIZE, SQSIZE)
+                #cirle
+                circl = (move.final.col* SQSIZE + 50, move.final.row* SQSIZE + 50)
                 # blit
-                pygame.draw.rect(surface, color, rect)
+                # pygame.draw.rect(surface, color, rect)
+                pygame.draw.circle(surface, color, circl, 15)
+
 
     def show_last_move(self, surface):
         theme = self.config.theme
