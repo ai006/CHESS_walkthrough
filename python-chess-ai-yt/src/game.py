@@ -109,6 +109,42 @@ class Game:
             # blit
             pygame.draw.rect(surface, color, rect, width=3)
 
+    def create_display_text(self, text):
+
+        #Load the font
+        font = pygame.font.SysFont('arial', 19)
+        text_surface = font.render(text, True, (0, 0, 0))
+        # text_surface = font.render(text, True, (220, 220, 220))
+
+        return text_surface
+
+    def show_game_details(self, surface):
+        # Define the rectangle
+        color = (252, 251, 244)
+        rect = (825, 25, 350, 600)
+        
+        # Draw the rectangle
+        pygame.draw.rect(surface, color, rect)
+        
+        # Load the image
+        image = pygame.image.load("../assets/images/game_details/background10.png")
+        
+        # Calculate the position to center the image in the rectangle
+        image_x = rect[0] + (rect[2] - image.get_width()) // 2
+        # image_y = rect[1] + (rect[3] - image.get_height()) // 2
+        
+        # Draw the image
+        surface.blit(image, (image_x, 30))
+
+        venue = "Grand Chess Tour Croatia Rapid & Blitz"
+        players = "white: Kasparov  vs  black: Korobov"
+        rating = "whiteElo: 2801  blackElo: 2668"
+        #Load the font
+        surface.blit(self.create_display_text(venue), (image_x, image.get_height()+20))
+        surface.blit(self.create_display_text(players), (image_x, image.get_height()+40))
+        surface.blit(self.create_display_text(rating), (image_x, image.get_height()+60))
+
+
     # other methods
 
     def next_turn(self):

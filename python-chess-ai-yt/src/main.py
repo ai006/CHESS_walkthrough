@@ -13,7 +13,7 @@ class Main:
 
     def __init__(self):
         pygame.init()
-        self.screen = pygame.display.set_mode( (WIDTH, HEIGHT) )
+        self.screen = pygame.display.set_mode( (WIDTH+400, HEIGHT) )
         pygame.display.set_caption('Chess')
         self.game = Game()
         self.mouse_events = Mouse_Events()
@@ -34,6 +34,7 @@ class Main:
         pygame.time.set_timer(self.POST_EVENT_TIMER, 10)
         while True:
             # show methods
+            game.show_game_details(screen)
             game.show_bg(screen)
             game.show_last_move(screen)
             game.show_moves(screen)
