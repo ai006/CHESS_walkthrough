@@ -31,7 +31,7 @@ class Main:
         tmp_str = "hello"
         tmp_piece = ""
         tmp_xy = ""
-        pygame.time.set_timer(self.POST_EVENT_TIMER, 10)
+        pygame.time.set_timer(self.POST_EVENT_TIMER, 15)
         while True:
             # show methods
             game.show_game_details(screen)
@@ -53,7 +53,7 @@ class Main:
                 # entered on a click
                 if event.type == pygame.MOUSEBUTTONDOWN:                
                     dragger.update_mouse(event.pos)
-                    print(event)
+                    # print(event)
                     clicked_row = dragger.mouseY // SQSIZE
                     clicked_col = dragger.mouseX // SQSIZE
                     # clicked_row = start_x
@@ -64,7 +64,7 @@ class Main:
                     # if clicked square has a piece ?
                     if board.squares[clicked_row][clicked_col].has_piece():
                         piece = board.squares[clicked_row][clicked_col].piece
-                        print(piece)
+                        # print(piece)
                         # valid piece (color) ?
                         if piece.color == game.next_player:
                             board.calc_moves(piece, clicked_row, clicked_col, bool=True)
