@@ -8,7 +8,7 @@ class ChessEventCard:
         self.background_color = (240, 240, 240)  # Light gray background
         self.card_color = (252, 251, 244)  # White card background
         self.shadow_color = (200, 200, 200)  # Shadow color
-        self.text_color = (70, 130, 180)  # Steel Blue (complementary to white)
+        self.text_color = (10, 150, 180)  # Steel Blue (complementary to white)
         self.padding = 20  # Padding inside the card
         self.font_name = "Georgia"
         self.max_font_size = 24
@@ -57,10 +57,6 @@ class ChessEventCard:
             self.scaled_image = image
         else:
             image = self.scaled_image
-        
-        # Draw the image
-        surface.blit(image, (895, 100))
-
 
         # Draw the card with shadow
         shadow_rect = pygame.Rect(self.x + 5, self.y + 5, self.width, self.height)
@@ -69,12 +65,16 @@ class ChessEventCard:
         card_rect = pygame.Rect(self.x, self.y, self.width, self.height)
         self.draw_rounded_rect(surface, self.card_color, card_rect, 20)
 
-        # Add text inside the card
+        # Add text and image inside the card
         current_y = self.y + self.padding
 
+        # Draw the image at the top with padding
+        surface.blit(image, (self.x + self.padding+ 50, current_y))
+        current_y += image.get_height() + 10  # Adjust vertical spacing after the image
+
         font = None
-        # Draw venue at the top
-        if self.found_font_size == True:
+        # Draw venue at the top, after the image
+        if self.found_font_size:
             font = self.font_found
         else:
             font, _ = self.get_fitting_font_size(self.venue, self.width)
@@ -104,4 +104,3 @@ class ChessEventCard:
 
         # Draw event date at the bottom
         font.render_to(surface, (self.x + self.width // 2 - font.get_rect(self.event_date).width // 2, current_y), self.event_date, self.text_color)
-

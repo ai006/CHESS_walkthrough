@@ -16,7 +16,7 @@ class Game:
         self.dragger = Dragger()
         self.config = Config()
 
-        self.cardDetails = ChessEventCard((825,450),(350,300))
+        self.cardDetails = ChessEventCard((825,50),(350,700))
         
 
     # blit methods
