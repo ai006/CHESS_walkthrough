@@ -6,6 +6,7 @@ from dragger import Dragger
 from config import Config
 from square import Square
 from card import ChessEventCard
+from piece import King
 
 class Game:
 
@@ -18,6 +19,7 @@ class Game:
 
         self.cardDetails = ChessEventCard((825,50),(350,700))
         
+        self.gameOver = False
 
     # blit methods
 
@@ -67,6 +69,10 @@ class Game:
                         img_center = col * SQSIZE + SQSIZE // 2, row * SQSIZE + SQSIZE // 2
                         piece.texture_rect = img.get_rect(center=img_center)
                         surface.blit(img, piece.texture_rect)
+        
+        # Show the chess match winner
+        self.show_match_outcome(surface)
+        
     
     # function used to show all the possible moves that a chess piece can make
     def show_moves(self, surface):
@@ -115,6 +121,27 @@ class Game:
 
     def show_game_details(self, surface):
         self.cardDetails.draw(surface)
+
+    def show_match_outcome(self, surface):
+        for row in range(ROWS):
+            for col in range(COLS):
+                # piece ?
+                if self.board.squares[row][col].has_piece():
+                    piece = self.board.squares[row][col].piece
+                    if isinstance(piece, King):
+                        if piece.color == 'black':
+                            # print(f"black {(row,col)}")
+                            # Load the versus image
+                            vs_image = pygame.image.load("../assets/images/winner_loser_icon/lose.png")
+
+                            # Draw VS in the middle
+                            vs_image = pygame.transform.scale(vs_image, (vs_image.get_width()*0.1, vs_image.get_height()*0.1))  # Adjust size as needed
+                            surface.blit(vs_image, (col*104, row*104))
+
+
+                        elif piece.color == 'white':
+                            # print(f"white {(row,col)}")
+                            pass
 
     # other methods
 

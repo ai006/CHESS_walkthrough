@@ -157,6 +157,8 @@ class Main:
                         pygame.event.post(self.mouse_events.events[0])
                         self.mouse_events.events.pop(0)
                     else:
+                        # Game is over
+                        game.gameOver = True
                         pygame.time.set_timer(self.POST_EVENT_TIMER, 0)
                 
                 #Reposition mouse before move events
