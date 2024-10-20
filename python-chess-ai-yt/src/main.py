@@ -16,7 +16,7 @@ class Main:
         self.screen = pygame.display.set_mode( (WIDTH+400, HEIGHT) )
         pygame.display.set_caption('Chess')
         self.game = Game()
-        self.mouse_events = Mouse_Events()
+        self.mouse_events = Mouse_Events("nothing")
 
         #create a custom event that will be used to create other events
         self.POST_EVENT_TIMER = pygame.USEREVENT + 1
@@ -163,8 +163,10 @@ class Main:
                 
                 #Reposition mouse before move events
                 elif event.type == pygame.USEREVENT + 2:
-                    print(event)
                     pygame.mouse.set_pos(event.pos)
+                # get the event which will show the winners
+                elif event.type == pygame.USEREVENT + 3:
+                    game.gameOutcome = event.game_outcome
 
 
             pygame.display.update()

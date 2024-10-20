@@ -3,17 +3,21 @@ from moves_to_coordinates import ChessMoves
 
 class Mouse_Events:
     
-	def __init__(self):
-		self.chessMoves = ChessMoves("nothing")
+	def __init__(self, file):
+
+		if file == 'nothing':
+			file = "../../master_games.pgn"
+
+		self.chessMoves = ChessMoves(file)
 		# Create a list of events to simulate
 		self.events = []
 		self.create_mouse_events()
           
 	def create_mouse_events(self):
 		for moves in self.chessMoves.moves_as_mouse_positions:
-			print(f"moves {moves}")
+			# print(f"moves {moves}")
 			start_x, start_y, dest_x, dest_y = self.chessMoves.get_coordinates(moves)
-			print(f"(start_x, start_y) {(start_x, start_y)}")
+			# print(f"(start_x, start_y) {(start_x, start_y)}")
 			self.events.append(pygame.event.Event(pygame.USEREVENT+2, pos=(start_y, start_x), button=1))
 			self.events.append(pygame.event.Event(pygame.MOUSEBUTTONDOWN, pos=(start_y, start_x), button=1))
 			# self.events.append(pygame.event.Event(pygame.USEREVENT+2, pos=(start_x, start_y), button=1))
@@ -49,3 +53,5 @@ class Mouse_Events:
 			self.events.append(pygame.event.Event(pygame.MOUSEBUTTONUP, pos=(start_y, start_x), button=1))
 			# self.events.append(pygame.event.Event(pygame.MOUSEBUTTONUP, pos=(start_x, start_y), button=1))
 
+		# Add the last event to show the winner 
+		self.events.append(pygame.event.Event(pygame.USEREVENT+3, game_outcome=self.chessMoves.chess_match_outcome))

@@ -7,16 +7,21 @@ class ChessMoves:
         self.moves_made = []
         self.moves_as_mouse_positions = []
         self.moves_made_UCI = []
+        self.chess_match_outcome = ''
         self.get_moves(file)
         self.convert_coordinate_to_positions()
     
     def get_moves(self, file):
-        pgn = open("../../master_games.pgn")
+        # pgn = open("../../master_games.pgn")
+        pgn = open(file)
         game = chess.pgn.read_game(pgn)
+        # get the game outcome
+        # Get the result of the game
+        self.chess_match_outcome = game.headers["Result"]
         for move in game.mainline_moves():
             self.moves_made_UCI.append(move.uci())
         self.uci_to_numeric()
-        
+       
     def uci_to_numeric(self):
 
         file_map = {'a': 0, 'b': 1, 'c': 2, 'd': 3, 'e': 4, 'f': 5, 'g': 6, 'h': 7}
@@ -28,7 +33,7 @@ class ChessMoves:
             start_numeric = (rank_map[start[1]], file_map[start[0]])
             end_numeric = (rank_map[end[1]], file_map[end[0]])
             self.moves_made.append([start_numeric, end_numeric])
-            print(f"uci {[start_numeric, end_numeric]}")
+            # print(f"uci {[start_numeric, end_numeric]}")
     
     def get_coordinates(self, move):
         start_x = move[0][0]

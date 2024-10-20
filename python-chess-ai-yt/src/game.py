@@ -20,6 +20,15 @@ class Game:
         self.cardDetails = ChessEventCard((825,50),(350,700))
         
         self.gameOver = False
+        self.gameOutcome = ''
+        
+        # load all the images 
+        self.win_image = pygame.image.load("../assets/images/winner_loser_icon/win.png")
+        self.win_image = pygame.transform.scale(self.win_image, (self.win_image.get_width()*0.7, self.win_image.get_height()*0.7))  # Adjust size as needed
+        self.lose_image = pygame.image.load("../assets/images/winner_loser_icon/lose.png")
+        self.lose_image = pygame.transform.scale(self.lose_image, (self.lose_image.get_width()*0.17, self.lose_image.get_height()*0.17))  # Adjust size as needed
+        self.draw_image = pygame.image.load("../assets/images/winner_loser_icon/half.png")
+        self.draw_image = pygame.transform.scale(self.draw_image, (self.draw_image.get_width()*0.13, self.draw_image.get_height()*0.13))  # Adjust size as needed
 
     # blit methods
 
@@ -70,8 +79,9 @@ class Game:
                         piece.texture_rect = img.get_rect(center=img_center)
                         surface.blit(img, piece.texture_rect)
         
-        # Show the chess match winner
-        self.show_match_outcome(surface)
+        if self.gameOver == True:
+            # Show the chess match winner
+            self.show_match_outcome(surface)
         
     
     # function used to show all the possible moves that a chess piece can make
@@ -129,19 +139,29 @@ class Game:
                 if self.board.squares[row][col].has_piece():
                     piece = self.board.squares[row][col].piece
                     if isinstance(piece, King):
-                        if piece.color == 'black':
-                            # print(f"black {(row,col)}")
-                            # Load the versus image
-                            vs_image = pygame.image.load("../assets/images/winner_loser_icon/lose.png")
 
-                            # Draw VS in the middle
-                            vs_image = pygame.transform.scale(vs_image, (vs_image.get_width()*0.1, vs_image.get_height()*0.1))  # Adjust size as needed
-                            surface.blit(vs_image, (col*104, row*104))
-
-
-                        elif piece.color == 'white':
-                            # print(f"white {(row,col)}")
-                            pass
+                        # gameOutcome = '1/2-1/2'
+                        # Determine the outcome
+                        # "White wins"
+                        if self.gameOutcome == "1-0":
+                            if piece.color == 'white':
+                                surface.blit(self.win_image, (col*98, row*100))
+                            else:
+                                surface.blit(self.lose_image, (col*99, row*103))
+                        # "Black wins"
+                        elif self.gameOutcome == "0-1":
+                            if piece.color == 'black':
+                                surface.blit(self.win_image, (col*98, row*100))
+                            else:
+                                surface.blit(self.lose_image, (col*99, row*100))
+                        # "Stalemate or Draw"
+                        elif self.gameOutcome == "1/2-1/2":
+                            if piece.color == 'black':
+                                surface.blit(self.draw_image, (col*99, row*100))
+                            else:
+                                surface.blit(self.draw_image, (col*99, row*100))
+                        else:
+                            assert False
 
     # other methods
 
