@@ -98,7 +98,7 @@ class Main:
                 
                 # click release
                 elif event.type == pygame.MOUSEBUTTONUP:
-                    print(event)
+                    # print(event)
                     # if dragger.dragging:
                     if True:
                         dragger.update_mouse(event.pos)
@@ -157,9 +157,17 @@ class Main:
                         pygame.event.post(self.mouse_events.events[0])
                         self.mouse_events.events.pop(0)
                     else:
-                        # Game is over
-                        game.gameOver = True
-                        pygame.time.set_timer(self.POST_EVENT_TIMER, 0)
+                        if game.gameOver == True:
+                            game.reset()
+                            game = self.game
+                            board = self.game.board
+                            dragger = self.game.dragger
+                            pygame.time.set_timer(self.POST_EVENT_TIMER, 0)
+                        else:
+                            print("GAME OVER")
+                            # Game is over
+                            game.gameOver = True
+                            pygame.time.set_timer(self.POST_EVENT_TIMER, 10000)
                 
                 #Reposition mouse before move events
                 elif event.type == pygame.USEREVENT + 2:
