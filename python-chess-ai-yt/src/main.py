@@ -153,28 +153,32 @@ class Main:
             
                 # create the chess move events
                 elif event.type == pygame.USEREVENT + 1:
-                    if(len(self.mouse_events.events) != 0):
+                    if(len(self.mouse_events.events) > 1):
                         pygame.event.post(self.mouse_events.events[0])
                         self.mouse_events.events.pop(0)
+                    elif len(self.mouse_events.events) == 1 :
+                        pygame.event.post(self.mouse_events.events[0])
+                        self.mouse_events.events.pop(0)
+                        pygame.time.set_timer(self.POST_EVENT_TIMER, 0)
+                        pygame.time.set_timer(self.POST_EVENT_TIMER, 10000)
                     else:
                         if game.gameOver == True:
+                            print("RESET GAME")
                             game.reset()
                             game = self.game
                             board = self.game.board
                             dragger = self.game.dragger
+                            game.gameOver = False
                             pygame.time.set_timer(self.POST_EVENT_TIMER, 0)
-                        else:
-                            print("GAME OVER")
-                            # Game is over
-                            game.gameOver = True
-                            pygame.time.set_timer(self.POST_EVENT_TIMER, 10000)
                 
                 #Reposition mouse before move events
                 elif event.type == pygame.USEREVENT + 2:
                     pygame.mouse.set_pos(event.pos)
                 # get the event which will show the winners
                 elif event.type == pygame.USEREVENT + 3:
+                    print("GETTING GAME OUTCOME")
                     game.gameOutcome = event.game_outcome
+                    game.gameOver = True
 
 
             pygame.display.update()
