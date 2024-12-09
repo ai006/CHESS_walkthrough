@@ -8,13 +8,28 @@ class ChessMoves:
         self.moves_as_mouse_positions = []
         self.moves_made_UCI = []
         self.chess_match_outcome = ''
+        self.game_data = {}
         self.get_moves(file)
         self.convert_coordinate_to_positions()
+
+    # function used to read all the game info
+    def getGameDetails(self, game):
+        # Extract headers into a dictionary
+        self.game_data = {
+            "Event": game.headers["Event"],
+            "Date": game.headers["Date"],
+            "White": game.headers["White"],
+            "Black": game.headers["Black"],
+            "Result": game.headers["Result"],
+            "WhiteElo": game.headers["WhiteElo"],
+            "BlackElo": game.headers["BlackElo"],
+        }
     
     def get_moves(self, file):
         # pgn = open("../../master_games.pgn")
         pgn = open(file)
         game = chess.pgn.read_game(pgn)
+        self.getGameDetails(game)
         # get the game outcome
         # Get the result of the game
         self.chess_match_outcome = game.headers["Result"]

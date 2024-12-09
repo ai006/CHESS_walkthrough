@@ -29,6 +29,16 @@ class ChessEventCard:
         self.rating2 = "Elo: 2668"
         self.event_date = "Date: July 7, 2024"
         self.vs_image_path = "../assets/images/game_details/three.png"
+        self.game_details = ""
+    
+    def update_game_details(self, game):
+        self.venue = game["Event"]
+        self.player1 = "White: " + game["White"].split(',')[0]
+        self.rating1 = "Elo: " + game["WhiteElo"]
+        self.player2 = "Black: " + game["Black"].split(',')[0]
+        self.rating2 = "Elo: " + game["BlackElo"]
+        self.event_date = "Date: "+ game["Date"]
+
 
     # Helper function to draw rounded rectangles
     def draw_rounded_rect(self, surface, color, rect, corner_radius):

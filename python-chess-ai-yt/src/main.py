@@ -1,5 +1,6 @@
 import pygame
 import sys
+import os
 
 from const import *
 from game import Game
@@ -17,10 +18,24 @@ class Main:
         pygame.display.set_caption('Chess')
         self.game = Game()
         self.mouse_events = Mouse_Events("nothing")
+        
+        # pass the game details
+        self.game.cardDetails.update_game_details(self.mouse_events.chessMoves.game_data)
 
         #create a custom event that will be used to create other events
         self.POST_EVENT_TIMER = pygame.USEREVENT + 1
         self.POSITION_MOUSE = pygame.USEREVENT + 2
+        self.pgn_games = []
+        self.getAllGamePaths()
+
+    # read all the games paths
+    def getAllGamePaths(self):
+        # Iterate over all .pgn files in the input folder
+        for filename in os.listdir('../../games/games'):
+            if filename.endswith('.pgn'):
+                file_path = os.path.join('../../games/games', filename)
+                self.pgn_games.append(file_path)
+        self.pgn_games.sort()
 
     def mainloop(self):
         
@@ -163,20 +178,24 @@ class Main:
                         pygame.time.set_timer(self.POST_EVENT_TIMER, 10000)
                     else:
                         if game.gameOver == True:
-                            print("RESET GAME")
+                            # print("RESET GAME")
                             game.reset()
                             game = self.game
+                            game.change_theme()
                             board = self.game.board
                             dragger = self.game.dragger
                             game.gameOver = False
-                            pygame.time.set_timer(self.POST_EVENT_TIMER, 0)
+                            self.mouse_events.reset(self.pgn_games.pop(0))
+                             # pass the game details
+                            self.game.cardDetails.update_game_details(self.mouse_events.chessMoves.game_data)
+                            pygame.time.set_timer(self.POST_EVENT_TIMER, 15)
                 
                 #Reposition mouse before move events
                 elif event.type == pygame.USEREVENT + 2:
                     pygame.mouse.set_pos(event.pos)
                 # get the event which will show the winners
                 elif event.type == pygame.USEREVENT + 3:
-                    print("GETTING GAME OUTCOME")
+                    # print("GETTING GAME OUTCOME")
                     game.gameOutcome = event.game_outcome
                     game.gameOver = True
 

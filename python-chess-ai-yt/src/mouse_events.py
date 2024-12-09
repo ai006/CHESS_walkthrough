@@ -8,6 +8,7 @@ class Mouse_Events:
 		if file == 'nothing':
 			file = "../../master_games.pgn"
 
+		print(f"Running {file}")
 		self.chessMoves = ChessMoves(file)
 		# Create a list of events to simulate
 		self.events = []
@@ -55,3 +56,6 @@ class Mouse_Events:
 
 		# Add the last event to show the winner 
 		self.events.append(pygame.event.Event(pygame.USEREVENT+3, game_outcome=self.chessMoves.chess_match_outcome))
+
+	def reset(self, file):
+		self.__init__(file)

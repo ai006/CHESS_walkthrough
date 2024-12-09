@@ -1,5 +1,6 @@
 import pygame
 import os
+import random
 
 from sound import Sound
 from theme import Theme
@@ -18,9 +19,16 @@ class Config:
             os.path.join('../assets/sounds/capture.wav'))
 
     def change_theme(self):
-        self.idx += 1
-        self.idx %= len(self.themes)
-        self.theme = self.themes[self.idx]
+        # Create a list of themes excluding the current theme
+        available_themes = [theme for theme in self.themes if theme != self.theme]
+        
+        # Select a random theme from the available themes
+        self.theme = random.choice(available_themes)
+
+    # def change_theme(self):
+    #     self.idx += 1
+    #     self.idx %= len(self.themes)
+    #     self.theme = self.themes[self.idx]
 
     def _add_themes(self):
         green = Theme((234, 235, 200), (119, 154, 88), (244, 247, 116), (172, 195, 51), '#C86464', '#C84646')
