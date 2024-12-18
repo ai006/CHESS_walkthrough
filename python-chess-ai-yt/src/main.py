@@ -47,6 +47,7 @@ class Main:
         tmp_piece = ""
         tmp_xy = ""
         pygame.time.set_timer(self.POST_EVENT_TIMER, 15)
+        debug_count = 0
         while True:
             # show methods
             game.show_game_details(screen)
@@ -68,7 +69,12 @@ class Main:
                 # entered on a click
                 if event.type == pygame.MOUSEBUTTONDOWN:                
                     dragger.update_mouse(event.pos)
-                    # print(event)
+                    print(f"count DOWN: {debug_count} => {event}")
+                    
+# count : 56 => <Event(1025-MouseButtonDown {'pos': (450, 650), 'button': 1})>
+# count : 57 => <Event(1025-MouseButtonDown {'pos': (650, 50), 'button': 1})>
+# count : 58 => <Event(1025-MouseButtonDown {'pos': (450, 750), 'button': 1})>
+
                     clicked_row = dragger.mouseY // SQSIZE
                     clicked_col = dragger.mouseX // SQSIZE
                     # clicked_row = start_x
@@ -115,6 +121,8 @@ class Main:
                 elif event.type == pygame.MOUSEBUTTONUP:
                     # print(event)
                     # if dragger.dragging:
+                    print(f"count UP: {debug_count} => {event}")
+                    debug_count+=1
                     if True:
                         dragger.update_mouse(event.pos)
 

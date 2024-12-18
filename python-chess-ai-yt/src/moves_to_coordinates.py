@@ -35,6 +35,8 @@ class ChessMoves:
         self.chess_match_outcome = game.headers["Result"]
         for move in game.mainline_moves():
             self.moves_made_UCI.append(move.uci())
+        # print the moves transformed to UCI
+        # print(self.moves_made_UCI)
         self.uci_to_numeric()
        
     def uci_to_numeric(self):
