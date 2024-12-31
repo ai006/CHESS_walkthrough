@@ -309,7 +309,10 @@ class Board:
                             if not self.in_check(piece, move):
                                 # append new move
                                 piece.add_move(move)
-                            else: break
+                            else:
+                                # If the move puts you in check 
+                                # do not add it
+                                continue
                         else:
                             # append new move
                             piece.add_move(move)

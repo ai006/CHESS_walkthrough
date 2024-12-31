@@ -278,6 +278,118 @@ count UP: 55 => <Event(1026-MouseButtonUp {'pos': (450, 350), 'button': 1})>
 count DOWN: 56 => <Event(1025-MouseButtonDown {'pos': (450, 650), 'button': 1})>
 count UP: 56 => <Event(1026-MouseButtonUp {'pos': (450, 350), 'button': 1})>
 count DOWN: 57 => <Event(1025-MouseButtonDown {'pos': (650, 50), 'button': 1})> #PROBLEM KING DOES NOT FINISH MOVE
+
+        debug: <Event(1024-MouseMotion {'pos': (649, 51), 'rel': (1, -1), 'buttons': (1, 0, 0), 'move_id': 57})>
+        debug: <Event(1024-MouseMotion {'pos': (648, 52), 'rel': (1, -1), 'buttons': (1, 0, 0), 'move_id': 57})>
+        debug: <Event(1024-MouseMotion {'pos': (647, 53), 'rel': (1, -1), 'buttons': (1, 0, 0), 'move_id': 57})>
+        debug: <Event(1024-MouseMotion {'pos': (646, 54), 'rel': (1, -1), 'buttons': (1, 0, 0), 'move_id': 57})>
+        debug: <Event(1024-MouseMotion {'pos': (645, 55), 'rel': (1, -1), 'buttons': (1, 0, 0), 'move_id': 57})>
+        debug: <Event(1024-MouseMotion {'pos': (644, 56), 'rel': (1, -1), 'buttons': (1, 0, 0), 'move_id': 57})>
+        debug: <Event(1024-MouseMotion {'pos': (643, 57), 'rel': (1, -1), 'buttons': (1, 0, 0), 'move_id': 57})>
+        debug: <Event(1024-MouseMotion {'pos': (642, 58), 'rel': (1, -1), 'buttons': (1, 0, 0), 'move_id': 57})>
+        debug: <Event(1024-MouseMotion {'pos': (641, 59), 'rel': (1, -1), 'buttons': (1, 0, 0), 'move_id': 57})>
+        debug: <Event(1024-MouseMotion {'pos': (640, 60), 'rel': (1, -1), 'buttons': (1, 0, 0), 'move_id': 57})>
+        debug: <Event(1024-MouseMotion {'pos': (639, 61), 'rel': (1, -1), 'buttons': (1, 0, 0), 'move_id': 57})>
+        debug: <Event(1024-MouseMotion {'pos': (638, 62), 'rel': (1, -1), 'buttons': (1, 0, 0), 'move_id': 57})>
+        debug: <Event(1024-MouseMotion {'pos': (637, 63), 'rel': (1, -1), 'buttons': (1, 0, 0), 'move_id': 57})>
+        debug: <Event(1024-MouseMotion {'pos': (636, 64), 'rel': (1, -1), 'buttons': (1, 0, 0), 'move_id': 57})>
+        debug: <Event(1024-MouseMotion {'pos': (635, 65), 'rel': (1, -1), 'buttons': (1, 0, 0), 'move_id': 57})>
+        debug: <Event(1024-MouseMotion {'pos': (634, 66), 'rel': (1, -1), 'buttons': (1, 0, 0), 'move_id': 57})>
+        debug: <Event(1024-MouseMotion {'pos': (633, 67), 'rel': (1, -1), 'buttons': (1, 0, 0), 'move_id': 57})>
+        debug: <Event(1024-MouseMotion {'pos': (632, 68), 'rel': (1, -1), 'buttons': (1, 0, 0), 'move_id': 57})>
+        debug: <Event(1024-MouseMotion {'pos': (631, 69), 'rel': (1, -1), 'buttons': (1, 0, 0), 'move_id': 57})>
+        debug: <Event(1024-MouseMotion {'pos': (630, 70), 'rel': (1, -1), 'buttons': (1, 0, 0), 'move_id': 57})>
+        debug: <Event(1024-MouseMotion {'pos': (629, 71), 'rel': (1, -1), 'buttons': (1, 0, 0), 'move_id': 57})>
+        debug: <Event(1024-MouseMotion {'pos': (628, 72), 'rel': (1, -1), 'buttons': (1, 0, 0), 'move_id': 57})>
+        debug: <Event(1024-MouseMotion {'pos': (627, 73), 'rel': (1, -1), 'buttons': (1, 0, 0), 'move_id': 57})>
+        debug: <Event(1024-MouseMotion {'pos': (626, 74), 'rel': (1, -1), 'buttons': (1, 0, 0), 'move_id': 57})>
+        debug: <Event(1024-MouseMotion {'pos': (625, 75), 'rel': (1, -1), 'buttons': (1, 0, 0), 'move_id': 57})>
+        debug: <Event(1024-MouseMotion {'pos': (624, 76), 'rel': (1, -1), 'buttons': (1, 0, 0), 'move_id': 57})>
+        debug: <Event(1024-MouseMotion {'pos': (623, 77), 'rel': (1, -1), 'buttons': (1, 0, 0), 'move_id': 57})>
+        debug: <Event(1024-MouseMotion {'pos': (622, 78), 'rel': (1, -1), 'buttons': (1, 0, 0), 'move_id': 57})>
+        debug: <Event(1024-MouseMotion {'pos': (621, 79), 'rel': (1, -1), 'buttons': (1, 0, 0), 'move_id': 57})>
+        debug: <Event(1024-MouseMotion {'pos': (620, 80), 'rel': (1, -1), 'buttons': (1, 0, 0), 'move_id': 57})>
+        debug: <Event(1024-MouseMotion {'pos': (619, 81), 'rel': (1, -1), 'buttons': (1, 0, 0), 'move_id': 57})>
+        debug: <Event(1024-MouseMotion {'pos': (618, 82), 'rel': (1, -1), 'buttons': (1, 0, 0), 'move_id': 57})>
+        debug: <Event(1024-MouseMotion {'pos': (617, 83), 'rel': (1, -1), 'buttons': (1, 0, 0), 'move_id': 57})>
+        debug: <Event(1024-MouseMotion {'pos': (616, 84), 'rel': (1, -1), 'buttons': (1, 0, 0), 'move_id': 57})>
+        debug: <Event(1024-MouseMotion {'pos': (615, 85), 'rel': (1, -1), 'buttons': (1, 0, 0), 'move_id': 57})>
+        debug: <Event(1024-MouseMotion {'pos': (614, 86), 'rel': (1, -1), 'buttons': (1, 0, 0), 'move_id': 57})>
+        debug: <Event(1024-MouseMotion {'pos': (613, 87), 'rel': (1, -1), 'buttons': (1, 0, 0), 'move_id': 57})>
+        debug: <Event(1024-MouseMotion {'pos': (612, 88), 'rel': (1, -1), 'buttons': (1, 0, 0), 'move_id': 57})>
+        debug: <Event(1024-MouseMotion {'pos': (611, 89), 'rel': (1, -1), 'buttons': (1, 0, 0), 'move_id': 57})>
+        debug: <Event(1024-MouseMotion {'pos': (610, 90), 'rel': (1, -1), 'buttons': (1, 0, 0), 'move_id': 57})>
+        debug: <Event(1024-MouseMotion {'pos': (609, 91), 'rel': (1, -1), 'buttons': (1, 0, 0), 'move_id': 57})>
+        debug: <Event(1024-MouseMotion {'pos': (608, 92), 'rel': (1, -1), 'buttons': (1, 0, 0), 'move_id': 57})>
+        debug: <Event(1024-MouseMotion {'pos': (607, 93), 'rel': (1, -1), 'buttons': (1, 0, 0), 'move_id': 57})>
+        debug: <Event(1024-MouseMotion {'pos': (606, 94), 'rel': (1, -1), 'buttons': (1, 0, 0), 'move_id': 57})>
+        debug: <Event(1024-MouseMotion {'pos': (605, 95), 'rel': (1, -1), 'buttons': (1, 0, 0), 'move_id': 57})>
+        debug: <Event(1024-MouseMotion {'pos': (604, 96), 'rel': (1, -1), 'buttons': (1, 0, 0), 'move_id': 57})>
+        debug: <Event(1024-MouseMotion {'pos': (603, 97), 'rel': (1, -1), 'buttons': (1, 0, 0), 'move_id': 57})>
+        debug: <Event(1024-MouseMotion {'pos': (602, 98), 'rel': (1, -1), 'buttons': (1, 0, 0), 'move_id': 57})>
+        debug: <Event(1024-MouseMotion {'pos': (601, 99), 'rel': (1, -1), 'buttons': (1, 0, 0), 'move_id': 57})>
+        debug: <Event(1024-MouseMotion {'pos': (600, 100), 'rel': (1, -1), 'buttons': (1, 0, 0), 'move_id': 57})>
+        debug: <Event(1024-MouseMotion {'pos': (599, 101), 'rel': (1, -1), 'buttons': (1, 0, 0), 'move_id': 57})>
+        debug: <Event(1024-MouseMotion {'pos': (598, 102), 'rel': (1, -1), 'buttons': (1, 0, 0), 'move_id': 57})>
+        debug: <Event(1024-MouseMotion {'pos': (597, 103), 'rel': (1, -1), 'buttons': (1, 0, 0), 'move_id': 57})>
+        debug: <Event(1024-MouseMotion {'pos': (596, 104), 'rel': (1, -1), 'buttons': (1, 0, 0), 'move_id': 57})>
+        debug: <Event(1024-MouseMotion {'pos': (595, 105), 'rel': (1, -1), 'buttons': (1, 0, 0), 'move_id': 57})>
+        debug: <Event(1024-MouseMotion {'pos': (594, 106), 'rel': (1, -1), 'buttons': (1, 0, 0), 'move_id': 57})>
+        debug: <Event(1024-MouseMotion {'pos': (593, 107), 'rel': (1, -1), 'buttons': (1, 0, 0), 'move_id': 57})>
+        debug: <Event(1024-MouseMotion {'pos': (592, 108), 'rel': (1, -1), 'buttons': (1, 0, 0), 'move_id': 57})>
+        debug: <Event(1024-MouseMotion {'pos': (591, 109), 'rel': (1, -1), 'buttons': (1, 0, 0), 'move_id': 57})>
+        debug: <Event(1024-MouseMotion {'pos': (590, 110), 'rel': (1, -1), 'buttons': (1, 0, 0), 'move_id': 57})>
+        debug: <Event(1024-MouseMotion {'pos': (589, 111), 'rel': (1, -1), 'buttons': (1, 0, 0), 'move_id': 57})>
+        debug: <Event(1024-MouseMotion {'pos': (588, 112), 'rel': (1, -1), 'buttons': (1, 0, 0), 'move_id': 57})>
+        debug: <Event(1024-MouseMotion {'pos': (587, 113), 'rel': (1, -1), 'buttons': (1, 0, 0), 'move_id': 57})>
+        debug: <Event(1024-MouseMotion {'pos': (586, 114), 'rel': (1, -1), 'buttons': (1, 0, 0), 'move_id': 57})>
+        debug: <Event(1024-MouseMotion {'pos': (585, 115), 'rel': (1, -1), 'buttons': (1, 0, 0), 'move_id': 57})>
+        debug: <Event(1024-MouseMotion {'pos': (584, 116), 'rel': (1, -1), 'buttons': (1, 0, 0), 'move_id': 57})>
+        debug: <Event(1024-MouseMotion {'pos': (583, 117), 'rel': (1, -1), 'buttons': (1, 0, 0), 'move_id': 57})>
+        debug: <Event(1024-MouseMotion {'pos': (582, 118), 'rel': (1, -1), 'buttons': (1, 0, 0), 'move_id': 57})>
+        debug: <Event(1024-MouseMotion {'pos': (581, 119), 'rel': (1, -1), 'buttons': (1, 0, 0), 'move_id': 57})>
+        debug: <Event(1024-MouseMotion {'pos': (580, 120), 'rel': (1, -1), 'buttons': (1, 0, 0), 'move_id': 57})>
+        debug: <Event(1024-MouseMotion {'pos': (579, 121), 'rel': (1, -1), 'buttons': (1, 0, 0), 'move_id': 57})>
+        debug: <Event(1024-MouseMotion {'pos': (578, 122), 'rel': (1, -1), 'buttons': (1, 0, 0), 'move_id': 57})>
+        debug: <Event(1024-MouseMotion {'pos': (577, 123), 'rel': (1, -1), 'buttons': (1, 0, 0), 'move_id': 57})>
+        debug: <Event(1024-MouseMotion {'pos': (576, 124), 'rel': (1, -1), 'buttons': (1, 0, 0), 'move_id': 57})>
+        debug: <Event(1024-MouseMotion {'pos': (575, 125), 'rel': (1, -1), 'buttons': (1, 0, 0), 'move_id': 57})>
+        debug: <Event(1024-MouseMotion {'pos': (574, 126), 'rel': (1, -1), 'buttons': (1, 0, 0), 'move_id': 57})>
+        debug: <Event(1024-MouseMotion {'pos': (573, 127), 'rel': (1, -1), 'buttons': (1, 0, 0), 'move_id': 57})>
+        debug: <Event(1024-MouseMotion {'pos': (572, 128), 'rel': (1, -1), 'buttons': (1, 0, 0), 'move_id': 57})>
+        debug: <Event(1024-MouseMotion {'pos': (571, 129), 'rel': (1, -1), 'buttons': (1, 0, 0), 'move_id': 57})>
+        debug: <Event(1024-MouseMotion {'pos': (570, 130), 'rel': (1, -1), 'buttons': (1, 0, 0), 'move_id': 57})>
+        debug: <Event(1024-MouseMotion {'pos': (569, 131), 'rel': (1, -1), 'buttons': (1, 0, 0), 'move_id': 57})>
+        debug: <Event(1024-MouseMotion {'pos': (568, 132), 'rel': (1, -1), 'buttons': (1, 0, 0), 'move_id': 57})>
+        debug: <Event(1024-MouseMotion {'pos': (567, 133), 'rel': (1, -1), 'buttons': (1, 0, 0), 'move_id': 57})>
+        debug: <Event(1024-MouseMotion {'pos': (566, 134), 'rel': (1, -1), 'buttons': (1, 0, 0), 'move_id': 57})>
+        debug: <Event(1024-MouseMotion {'pos': (565, 135), 'rel': (1, -1), 'buttons': (1, 0, 0), 'move_id': 57})>
+        debug: <Event(1024-MouseMotion {'pos': (564, 136), 'rel': (1, -1), 'buttons': (1, 0, 0), 'move_id': 57})>
+        debug: <Event(1024-MouseMotion {'pos': (563, 137), 'rel': (1, -1), 'buttons': (1, 0, 0), 'move_id': 57})>
+        debug: <Event(1024-MouseMotion {'pos': (562, 138), 'rel': (1, -1), 'buttons': (1, 0, 0), 'move_id': 57})>
+        debug: <Event(1024-MouseMotion {'pos': (561, 139), 'rel': (1, -1), 'buttons': (1, 0, 0), 'move_id': 57})>
+        debug: <Event(1024-MouseMotion {'pos': (560, 140), 'rel': (1, -1), 'buttons': (1, 0, 0), 'move_id': 57})>
+        debug: <Event(1024-MouseMotion {'pos': (559, 141), 'rel': (1, -1), 'buttons': (1, 0, 0), 'move_id': 57})>
+        debug: <Event(1024-MouseMotion {'pos': (558, 142), 'rel': (1, -1), 'buttons': (1, 0, 0), 'move_id': 57})>
+        debug: <Event(1024-MouseMotion {'pos': (557, 143), 'rel': (1, -1), 'buttons': (1, 0, 0), 'move_id': 57})>
+        debug: <Event(1024-MouseMotion {'pos': (556, 144), 'rel': (1, -1), 'buttons': (1, 0, 0), 'move_id': 57})>
+        debug: <Event(1024-MouseMotion {'pos': (555, 145), 'rel': (1, -1), 'buttons': (1, 0, 0), 'move_id': 57})>
+        debug: <Event(1024-MouseMotion {'pos': (554, 146), 'rel': (1, -1), 'buttons': (1, 0, 0), 'move_id': 57})>
+        debug: <Event(1024-MouseMotion {'pos': (553, 147), 'rel': (1, -1), 'buttons': (1, 0, 0), 'move_id': 57})>
+        debug: <Event(1024-MouseMotion {'pos': (552, 148), 'rel': (1, -1), 'buttons': (1, 0, 0), 'move_id': 57})>
+        debug: <Event(1024-MouseMotion {'pos': (551, 149), 'rel': (1, -1), 'buttons': (1, 0, 0), 'move_id': 57})>
+        debug: <Event(1024-MouseMotion {'pos': (550, 150), 'rel': (1, -1), 'buttons': (1, 0, 0), 'move_id': 57})>
+
+[(-1, 6), (-1, 7), (0, 7), (1, 7), (1, 6), (1, 5), (0, 5), (-1, 5)]
+        row -1 col 6
+        row -1 col 7
+        row 0 col 7
+
+initial <square.Square object at 0x000002BB9BC11CA0>
+final <square.Square object at 0x000002BB9BC11790>
+move (6, 0) -> (5, 1)
+piece <piece.King object at 0x000002BB98E6D610>
+
 count UP: 57 => <Event(1026-MouseButtonUp {'pos': (550, 150), 'button': 1})>
 count DOWN: 58 => <Event(1025-MouseButtonDown {'pos': (450, 750), 'button': 1})>
 count UP: 58 => <Event(1026-MouseButtonUp {'pos': (250, 750), 'button': 1})>
