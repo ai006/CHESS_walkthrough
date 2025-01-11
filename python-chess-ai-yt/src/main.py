@@ -73,6 +73,7 @@ class Main:
                     # clicked_row = start_x
                     # clicked_col = start_y
                     tmp_str = str(clicked_row) + " " + str(clicked_col)
+                    # print(event)
                     
 
                     # if clicked square has a piece ?

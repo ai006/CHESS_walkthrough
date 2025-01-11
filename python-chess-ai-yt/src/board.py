@@ -34,7 +34,7 @@ class Board:
                 self.squares[final.row][final.col].piece = piece
                 if not testing:
                     sound = Sound(
-                        os.path.join('assets/sounds/capture.wav'))
+                        os.path.join('../assets/sounds/capture.wav'))
                     sound.play()
             
             # pawn promotion
@@ -125,9 +125,11 @@ class Board:
                             # append new move
                             piece.add_move(move)
                     # blocked
-                    else: break
+                    else: 
+                        continue
                 # not in range
-                else: break
+                else: 
+                    continue
 
             # diagonal moves
             possible_move_row = row + piece.dir
@@ -227,7 +229,8 @@ class Board:
                             if not self.in_check(piece, move):
                                 # append new move
                                 piece.add_move(move)
-                            else: break
+                            else: 
+                                continue
                         else:
                             # append new move
                             piece.add_move(move)

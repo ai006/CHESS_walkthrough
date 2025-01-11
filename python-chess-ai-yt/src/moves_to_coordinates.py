@@ -12,18 +12,19 @@ class ChessMoves:
         self.get_moves(file)
         self.convert_coordinate_to_positions()
 
-    # function used to read all the game info
+    # Function used to read all the game info
     def getGameDetails(self, game):
-        # Extract headers into a dictionary
+        # Extract headers into a dictionary with default values
         self.game_data = {
-            "Event": game.headers["Event"],
-            "Date": game.headers["Date"],
-            "White": game.headers["White"],
-            "Black": game.headers["Black"],
-            "Result": game.headers["Result"],
-            "WhiteElo": game.headers["WhiteElo"],
-            "BlackElo": game.headers["BlackElo"],
+            "Event": game.headers.get("Event", "Unknown Event"),
+            "Date": game.headers.get("Date", "Unknown Date"),
+            "White": game.headers.get("White", "Unknown Player"),
+            "Black": game.headers.get("Black", "Unknown Player"),
+            "Result": game.headers.get("Result", "Unknown Result"),
+            "WhiteElo": game.headers.get("WhiteElo", "N/A"),
+            "BlackElo": game.headers.get("BlackElo", "N/A"),
         }
+
     
     def get_moves(self, file):
         # pgn = open("../../master_games.pgn")

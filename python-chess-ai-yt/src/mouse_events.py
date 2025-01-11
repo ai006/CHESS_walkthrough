@@ -8,7 +8,7 @@ class Mouse_Events:
 
 		if file == 'nothing':
 			# file = "../../master_games.pgn"
-			file = "../../games/games/game101.pgn"
+			file = "../../games/games/game554.pgn"
 
 		print(f"Running {file}")
 		self.chessMoves = ChessMoves(file)
