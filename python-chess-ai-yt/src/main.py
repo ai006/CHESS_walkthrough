@@ -8,6 +8,7 @@ from square import Square
 from move import Move
 from debug import debug, debugPiece, debugPieceCoord
 from mouse_events import Mouse_Events
+# from sound import SoundManager
 import time
 
 class Main:
@@ -27,6 +28,9 @@ class Main:
         self.POSITION_MOUSE = pygame.USEREVENT + 2
         self.pgn_games = []
         self.getAllGamePaths()
+        
+        # self.sound_manager = SoundManager()
+        # self.sound_manager.load_music_directory("../assets/music")  # Add your music directory path
 
     # read all the games paths
     def getAllGamePaths(self):
@@ -202,6 +206,9 @@ class Main:
                     # print("GETTING GAME OUTCOME")
                     game.gameOutcome = event.game_outcome
                     game.gameOver = True
+                # Handle music end event
+                # elif event.type == pygame.USEREVENT + 4:  # Music end event
+                #     self.sound_manager.handle_music_end()
 
 
             pygame.display.update()
