@@ -8,7 +8,7 @@ from square import Square
 from move import Move
 from debug import debug, debugPiece, debugPieceCoord
 from mouse_events import Mouse_Events
-# from sound import SoundManager
+from sound import SoundManager
 import time
 
 class Main:
@@ -29,8 +29,8 @@ class Main:
         self.pgn_games = []
         self.getAllGamePaths()
         
-        # self.sound_manager = SoundManager()
-        # self.sound_manager.load_music_directory("../assets/music")  # Add your music directory path
+        self.sound_manager = SoundManager()
+        self.sound_manager.load_music_directory("../assets/music")  # Add your music directory path
 
     # read all the games paths
     def getAllGamePaths(self):
