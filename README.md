@@ -1,6 +1,6 @@
 # chess_walkthrough
 
-Replays real master-level chess games on their own in a Pygame window. Each game is read from a PGN file and turned into simulated mouse drags, so the pieces move across the board as if someone were playing them. A card on the right shows the event, players, Elo ratings and date. When a game ends, win/lose/draw icons appear on the kings for about 10 seconds. Then the board switches to a random theme and the next game starts.
+Replays chess games on their own in a Pygame window. Each game is read from a PGN file and turned into simulated mouse drags, so the pieces move across the board as if someone were playing them. A card on the right shows the event, players, Elo ratings and date. When a game ends, win/lose/draw icons appear on the kings for about 10 seconds. Then the board switches to a random theme and the next game starts.
 
 Built on top of [AlejoG10/python-chess-ai-yt](https://github.com/AlejoG10/python-chess-ai-yt).
 
